@@ -10,7 +10,7 @@ namespace LS
         public float vertical;
         public float moveAmount;
         public float mouseX;
-        public float mousey;
+        public float mouseY;
 
         PlayerControls inputActions;
         CameraHandler cameraHandler;
@@ -30,7 +30,7 @@ namespace LS
             if(cameraHandler != null)
             {
                 cameraHandler.FollowTarget(delta);
-                cameraHandler.HandleCameraRotation(delta, mouseX, mousey);
+                cameraHandler.HandleCameraRotation(delta, mouseX, mouseY);
             }
         }
         public void OnEnable()
@@ -60,7 +60,7 @@ namespace LS
             vertical = movementInput.y;
             moveAmount = Mathf.Clamp01(Mathf.Abs(horizontal) + Mathf.Abs(vertical));
             mouseX = cameraInput.x;
-            mousey = cameraInput.y;
+            mouseY = cameraInput.y;
         }
     }
 }
