@@ -11,6 +11,7 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
+        HealthBar.value = currentHealth;
     }
 
     // Update is called once per frame
