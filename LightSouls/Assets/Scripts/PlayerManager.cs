@@ -7,22 +7,45 @@ namespace LS
 
 
     public class PlayerManager : MonoBehaviour
-    {
-        Animator anim;
+    {   
+        PlayerLocomotion playerLocomotion;
         InputHandler inputHandler;
+        Animator anim;
+
+        public bool isInteracting;
+        [Header("Player Flags")]
+        public bool isSprinting;
+        public bool isInAir;
+        public bool isGrounded;
+
         // Start is called before the first frame update
         void Start()
         {
             inputHandler = GetComponent<InputHandler>();
             anim = GetComponentInChildren<Animator>();
+            playerLocomotion = GetComponent<PlayerLocomotion>();
         }
 
         // Update is called once per frame
         void Update()
         {
-            inputHandler.isInteracting = anim.GetBool("isInteracting");
+            float delta = Time.deltaTime;
+            inputHandler.TickInput(delta);
+
+            isInteracting = anim.GetBool("isInteracting");
+            playerLocomotion.HandleFalling(delta, playerLocomotion.moveDirection);
+        }
+
+        private void LateUpdate()
+        {
+            isSprinting = inputHandler.b_Input;
             inputHandler.rollFlag = false;
             inputHandler.sprintFlag = false;
+
+            if (isInAir)
+            {
+                playerLocomotion.inAirTimer = playerLocomotion.inAirTimer + Time.deltaTime;
+            }
         }
 
     }

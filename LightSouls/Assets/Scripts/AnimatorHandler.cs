@@ -2,19 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace LS 
+namespace LS
 {
     public class AnimatorHandler : MonoBehaviour
     {
+        PlayerManager playerManager;
         public Animator anim;
         public InputHandler inputHandler;
         public PlayerLocomotion playerLocomotion;
+
         int vertical;
         int horizontal;
         public bool canRotate;
 
         public void Initialize()
         {
+            playerManager = GetComponentInParent<PlayerManager>();
             anim = GetComponent<Animator>();
             inputHandler = GetComponentInParent<InputHandler>();
             playerLocomotion = GetComponentInParent<PlayerLocomotion>();
@@ -24,12 +27,12 @@ namespace LS
 
         }
 
-        public void UpdateAnimatorValues(float verticalMovement, float horizontalMovement,bool isSprinting)
+        public void UpdateAnimatorValues(float verticalMovement, float horizontalMovement, bool isSprinting)
         {
             #region Vertical
             float v = 0;
 
-            if(verticalMovement > 0 && verticalMovement < 0.55f)
+            if (verticalMovement > 0 && verticalMovement < 0.55f)
             {
                 v = 0.5f;
             }
@@ -87,7 +90,7 @@ namespace LS
 
         }
 
-        public void PlayTargetAnimation(string targetAnim, bool isInteracting)
+        public void PlayerTargetAnimation(string targetAnim, bool isInteracting)
         {
             anim.applyRootMotion = isInteracting;
             anim.SetBool("isInteracting", isInteracting);
@@ -106,17 +109,17 @@ namespace LS
 
         private void OnAnimatorMove()
         {
-           if(inputHandler.isInteracting == false)
+            if (playerManager.isInteracting == false)
                 return;
 
 
             float delta = Time.deltaTime;
-            playerLocomotion.rigidBody.drag = 0;
+            playerLocomotion.rigidbody.drag = 0;
             Vector3 deltaPosition = anim.deltaPosition;
             deltaPosition.y = 0;
             Vector3 velocity = deltaPosition / delta;
-            playerLocomotion.rigidBody.velocity = velocity;
+            playerLocomotion.rigidbody.velocity = velocity;
         }
 
     }
-    }
+}

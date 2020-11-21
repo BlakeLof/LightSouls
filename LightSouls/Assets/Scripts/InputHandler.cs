@@ -16,7 +16,6 @@ namespace LS
         public bool rollFlag;
         public bool sprintFlag;
         public float rollInputTimer;
-        public bool isInteracting;
 
         PlayerControls inputActions;
         CameraHandler cameraHandler;
