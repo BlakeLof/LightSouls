@@ -10899,6 +10899,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f96bb839a30af2549b691bfe04b8846b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isInteracting: 0
+  isSprinting: 0
+  isInAir: 0
+  isGrounded: 0
 --- !u!43 &1882126654
 Mesh:
   m_ObjectHideFlags: 0
@@ -12382,13 +12386,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 127f438a46a4cc14babbdba5c3046c6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveDirection: {x: 0, y: 0, z: 0}
   myTransform: {fileID: 0}
   animatorHandler: {fileID: 0}
-  rigidBody: {fileID: 0}
+  rigidbody: {fileID: 0}
   normalCamera: {fileID: 0}
+  groundDetectionRayStartPoint: 0.5
+  minimumDistanceNeededToBeginFall: 1
+  groundDirectionRayDistance: 0.2
+  inAirTimer: 0
   movementSpeed: 5
   sprintSpeed: 8
   rotationSpeed: 10
+  fallingSpeed: 45
   isSprinting: 0
 --- !u!4 &5603071329396171857
 Transform:
@@ -12442,7 +12452,6 @@ MonoBehaviour:
   rollFlag: 0
   sprintFlag: 0
   rollInputTimer: 0
-  isInteracting: 0
 --- !u!136 &5603071329396171861
 CapsuleCollider:
   m_ObjectHideFlags: 0
