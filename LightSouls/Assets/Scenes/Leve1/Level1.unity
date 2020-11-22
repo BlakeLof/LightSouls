@@ -2423,7 +2423,7 @@ PrefabInstance:
     - target: {fileID: 3382461186439969574, guid: 0428257e7ea11714bbbdd0e3b657008d,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.047405306
+      value: 0.047405303
       objectReference: {fileID: 0}
     - target: {fileID: 3382461186439969574, guid: 0428257e7ea11714bbbdd0e3b657008d,
         type: 3}
@@ -2433,7 +2433,7 @@ PrefabInstance:
     - target: {fileID: 3382461186439969574, guid: 0428257e7ea11714bbbdd0e3b657008d,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0007996425
+      value: 0.00079964625
       objectReference: {fileID: 0}
     - target: {fileID: 3382461186439969574, guid: 0428257e7ea11714bbbdd0e3b657008d,
         type: 3}
@@ -4284,6 +4284,36 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &724200433
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 724200434}
+  m_Layer: 0
+  m_Name: Left Hand Override
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &724200434
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 724200433}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5603071330311248071}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &724404694
 GameObject:
   m_ObjectHideFlags: 0
@@ -12981,6 +13011,7 @@ Transform:
   - {fileID: 5603071330311248109}
   - {fileID: 5603071330311248119}
   - {fileID: 5603071330311248127}
+  - {fileID: 724200434}
   m_Father: {fileID: 5603071330311248019}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -14768,6 +14799,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5603071330311248071}
+  - component: {fileID: 5603071330311669032}
   m_Layer: 0
   m_Name: L_wrist
   m_TagString: Untagged
@@ -14775,6 +14807,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &5603071330311669032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5603071330311669031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6e381fdc0dcc4442b4178b74f4226cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentOverride: {fileID: 724200434}
+  isLeftHandSlot: 1
+  isRightHandSlot: 0
+  currentWeaponModel: {fileID: 0}
 --- !u!1 &5603071330311669033
 GameObject:
   m_ObjectHideFlags: 0
@@ -15008,6 +15056,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5603071330311248133}
+  - component: {fileID: 5603071330311669094}
   m_Layer: 0
   m_Name: R_wrist
   m_TagString: Untagged
@@ -15015,6 +15064,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &5603071330311669094
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5603071330311669093}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6e381fdc0dcc4442b4178b74f4226cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentOverride: {fileID: 5603071330311248133}
+  isLeftHandSlot: 0
+  isRightHandSlot: 1
+  currentWeaponModel: {fileID: 0}
 --- !u!1 &5603071330311669095
 GameObject:
   m_ObjectHideFlags: 0
