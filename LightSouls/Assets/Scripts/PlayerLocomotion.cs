@@ -112,25 +112,25 @@ namespace LS
 
             float speed = movementSpeed;
 
-            if (inputHandler.sprintFlag )
+            if (inputHandler.sprintFlag)
             {
                 speed = sprintSpeed;
                 isSprinting = true;
                 moveDirection *= speed;
             }
             else
-           
+
                 moveDirection *= speed;
-            }
-            Vector3 projectedVelocity = Vector3.ProjectOnPlane(moveDirection, normalVector);
-            rigidbody.velocity = projectedVelocity;
+        
+        Vector3 projectedVelocity = Vector3.ProjectOnPlane(moveDirection, normalVector);
+        rigidbody.velocity = projectedVelocity;
 
             animatorHandler.UpdateAnimatorValues(inputHandler.moveAmount, 0, isSprinting);
             if (animatorHandler.canRotate)
             {
                 HandleRotation(delta);
-            }
-        }
+
+            }   }
         public void HandleRollingAndSprinting(float delta)
         {
             if (animatorHandler.anim.GetBool("isInteracting"))
@@ -239,7 +239,7 @@ namespace LS
                 }
             }
         }
-    }
-    #endregion
-}
+
+        #endregion
+    } }
 
