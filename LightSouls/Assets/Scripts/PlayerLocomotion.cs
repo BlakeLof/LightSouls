@@ -112,14 +112,14 @@ namespace LS
 
             float speed = movementSpeed;
 
-            if (inputHandler.sprintFlag)
+            if (inputHandler.sprintFlag )
             {
                 speed = sprintSpeed;
                 isSprinting = true;
                 moveDirection *= speed;
             }
             else
-            {
+           
                 moveDirection *= speed;
             }
             Vector3 projectedVelocity = Vector3.ProjectOnPlane(moveDirection, normalVector);
