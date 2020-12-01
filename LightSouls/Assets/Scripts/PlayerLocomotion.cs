@@ -39,7 +39,7 @@ namespace LS
         [SerializeField]
         float rotationSpeed = 10;
         [SerializeField]
-        float fallingSpeed = 45;
+        float fallingSpeed = 80;
 
         public bool isSprinting;
 
