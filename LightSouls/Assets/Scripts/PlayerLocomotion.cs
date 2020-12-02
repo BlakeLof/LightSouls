@@ -174,7 +174,7 @@ namespace LS
             if (playerManager.isInAir)
             {
                 rigidbody.AddForce(-Vector3.up * fallingSpeed);
-                rigidbody.AddForce(moveDirection * fallingSpeed / 5f);
+                rigidbody.AddForce(moveDirection * fallingSpeed / 10f);
             }
 
             Vector3 dir = moveDirection;
@@ -221,7 +221,7 @@ namespace LS
 
                     Vector3 vel = rigidbody.velocity;
                     vel.Normalize();
-                    rigidbody.velocity = vel * (movementSpeed / 2);
+                    rigidbody.velocity = vel * (movementSpeed / 10);
                     playerManager.isInAir = true;
                 }
             }
