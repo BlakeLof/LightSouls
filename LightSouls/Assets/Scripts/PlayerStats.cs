@@ -7,6 +7,7 @@ public class PlayerStats : MonoBehaviour
     public int healthLevel = 10;
     public int maxHealth;
     public int currentHealth;
+    public float coolDownTimer;
 
     public HealthBar healthbar;
 
@@ -24,6 +25,17 @@ public class PlayerStats : MonoBehaviour
         healthbar.SetMaxHealth(maxHealth);
     }
 
+    void Update()
+    {
+        if (coolDownTimer > 0)
+            coolDownTimer -= Time.deltaTime;
+        if (coolDownTimer < 0)
+            coolDownTimer = 0;
+        if (Input.GetKeyDown('q') && coolDownTimer == 0)
+            DrinkFlask();
+            
+    }
+
     private int SetMaxHealthFromHealthLevel()
     {
         maxHealth = healthLevel * 10;
@@ -33,15 +45,28 @@ public class PlayerStats : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth = currentHealth - damage;
-
+        if (currentHealth > 0)
+            currentHealth = 0;
         healthbar.SetCurrentHealth(currentHealth);
-
-//        animatorHandler.PlayTargetAnimation("Damage_Animation", true);
-        if(currentHealth <= 0)
+        if(currentHealth == 0)
         {
             currentHealth = 0;
 //            animatorHandler.PlayTargetAnimation("Unarmed-Death1", true);
-
         }
+//        animatorHandler.PlayTargetAnimation("Damage_Animation", true);
+        
+    }
+
+    public void Heal(int heal)
+    {
+        currentHealth += heal;
+        if (currentHealth > maxHealth)
+            currentHealth = maxHealth;
+        healthbar.SetCurrentHealth(currentHealth);
+    }
+    public void DrinkFlask()
+    {
+        Heal(25);
+        coolDownTimer = 8;
     }
 }
