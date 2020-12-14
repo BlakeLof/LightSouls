@@ -6,7 +6,7 @@ namespace LS
 {
 
 
-    public class PlayerManager : MonoBehaviour
+    public class PlayerManager : CharacterManager
     {   
         PlayerLocomotion playerLocomotion;
         InputHandler inputHandler;
