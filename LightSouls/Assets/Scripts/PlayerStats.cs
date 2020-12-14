@@ -52,9 +52,9 @@ public class PlayerStats : MonoBehaviour
         if(currentHealth == 0)
         {
             currentHealth = 0;
-          AnimatorHandler.PlayerTargetAnimation("Unarmed-Death1", true);
+        //   AnimatorHandler.PlayerTargetAnimation("Unarmed-Death1", true);
         }
-        AnimatorHandler.PlayerTargetAnimation("Damage_Animation", true);
+        // AnimatorHandler.PlayerTargetAnimation("Damage_Animation", true);
         
     }
 
