@@ -4,10 +4,10 @@ using UnityEngine;
 
 namespace LS
 {
-    public class AnimatorHandler : MonoBehaviour
+    public class AnimatorHandler : AnimatorManager
     {
         PlayerManager playerManager;
-        public Animator anim;
+        
         public InputHandler inputHandler;
         public PlayerLocomotion playerLocomotion;
 
@@ -90,12 +90,7 @@ namespace LS
 
         }
 
-        public void PlayerTargetAnimation(string targetAnim, bool isInteracting)
-        {
-            anim.applyRootMotion = isInteracting;
-            anim.SetBool("isInteracting", isInteracting);
-            anim.CrossFade(targetAnim, 0.2f);
-        }
+       
 
         public void CanRotate()
         {

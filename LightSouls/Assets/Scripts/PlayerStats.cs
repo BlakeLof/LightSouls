@@ -3,11 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace LS{
-public class PlayerStats : MonoBehaviour
+public class PlayerStats : CharacterStats
 {
-    public int healthLevel = 10;
-    public int maxHealth;
-    public int currentHealth;
+  
     public float coolDownTimer;
 
     public HealthBar healthbar;
@@ -52,9 +50,21 @@ public class PlayerStats : MonoBehaviour
         if(currentHealth == 0)
         {
             currentHealth = 0;
+<<<<<<< Updated upstream
         //   AnimatorHandler.PlayerTargetAnimation("Unarmed-Death1", true);
         }
         // AnimatorHandler.PlayerTargetAnimation("Damage_Animation", true);
+=======
+<<<<<<< HEAD
+         // AnimatorHandler.PlayerTargetAnimation("Unarmed-Death1", true);
+        }
+       // AnimatorHandler.PlayerTargetAnimation("Damage_Animation", true);
+=======
+        //   AnimatorHandler.PlayerTargetAnimation("Unarmed-Death1", true);
+        }
+        // AnimatorHandler.PlayerTargetAnimation("Damage_Animation", true);
+>>>>>>> e048c9852b16d39cf6fffc42c0355d23e3a74e37
+>>>>>>> Stashed changes
         
     }
 
