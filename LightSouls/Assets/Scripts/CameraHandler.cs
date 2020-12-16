@@ -1,10 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.UIElements;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace LS { 
-public class CameraHandler : MonoBehaviour
+namespace LS
+{
+    public class CameraHandler : MonoBehaviour
 {
         public Transform targetTransform;
         public Transform cameraTransform;

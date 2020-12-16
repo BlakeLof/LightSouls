@@ -62,3 +62,4 @@ crashlytics-build.properties
 *.meta
 #But not source file with postfix. which is everything but a folder
 !*.*.meta
+LightSouls/Assets/Level Design/Samples/Terrain Tools/0.1.0-preview.meta

@@ -12,14 +12,14 @@ public class PlayerStats : MonoBehaviour
 
     public HealthBar healthbar;
 
-//    AnimatorHandler animatorHandler;
+    AnimatorHandler animatorHandler;
 
-//    private void Awake()
-//    {
-//        animatorHandler = GetComponentInChildren<AnimatorHandler>();
-//    }
+        private void Awake()
+        {
+            animatorHandler = GetComponentInChildren<AnimatorHandler>();
+        }
 
-    void Start()
+        void Start()
     {
         maxHealth = SetMaxHealthFromHealthLevel();
         currentHealth = maxHealth;
@@ -32,8 +32,8 @@ public class PlayerStats : MonoBehaviour
             coolDownTimer -= Time.deltaTime;
         if (coolDownTimer < 0)
             coolDownTimer = 0;
-        if (Input.GetKeyDown(KeyCode.Q) && coolDownTimer == 0)
-            DrinkFlask();
+        //if (Input.GetKeyDown(KeyCode.Q) && coolDownTimer == 0)
+        //    DrinkFlask();
             
     }
 
@@ -52,9 +52,9 @@ public class PlayerStats : MonoBehaviour
         if(currentHealth == 0)
         {
             currentHealth = 0;
-        //   AnimatorHandler.PlayerTargetAnimation("Unarmed-Death1", true);
+            animatorHandler.PlayerTargetAnimation("Unarmed-Death1", true);
         }
-        // AnimatorHandler.PlayerTargetAnimation("Damage_Animation", true);
+            animatorHandler.PlayerTargetAnimation("Damage_Animation", true);
         
     }
 
