@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace LS{
 public class PlayerStats : MonoBehaviour
 {
     public int healthLevel = 10;
@@ -32,7 +31,7 @@ public class PlayerStats : MonoBehaviour
             coolDownTimer -= Time.deltaTime;
         if (coolDownTimer < 0)
             coolDownTimer = 0;
-        if (Input.GetKeyDown(KeyCode.Q) && coolDownTimer == 0)
+        if (Input.GetKeyDown('q') && coolDownTimer == 0)
             DrinkFlask();
             
     }
@@ -52,9 +51,9 @@ public class PlayerStats : MonoBehaviour
         if(currentHealth == 0)
         {
             currentHealth = 0;
-          AnimatorHandler.PlayerTargetAnimation("Unarmed-Death1", true);
+//            animatorHandler.PlayTargetAnimation("Unarmed-Death1", true);
         }
-        AnimatorHandler.PlayerTargetAnimation("Damage_Animation", true);
+//        animatorHandler.PlayTargetAnimation("Damage_Animation", true);
         
     }
 
@@ -70,5 +69,4 @@ public class PlayerStats : MonoBehaviour
         Heal(25);
         coolDownTimer = 8;
     }
-}
 }
