@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace LS
 {
-public class EnemyManager : CharacterManager
+public class EnemyManager : MonoBehaviour
 {
     bool isPreformingAction;
 
