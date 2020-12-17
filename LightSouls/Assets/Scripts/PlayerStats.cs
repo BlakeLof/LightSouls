@@ -32,8 +32,8 @@ public class PlayerStats : MonoBehaviour
             coolDownTimer -= Time.deltaTime;
         if (coolDownTimer < 0)
             coolDownTimer = 0;
-        //if (Input.GetKeyDown(KeyCode.Q) && coolDownTimer == 0)
-        //    DrinkFlask();
+        if (Input.GetKeyDown(KeyCode.Q) && coolDownTimer == 0)
+            DrinkFlask();
             
     }
 
